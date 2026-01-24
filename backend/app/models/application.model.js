@@ -1,0 +1,22 @@
+import { DataTypes } from "sequelize";
+import sequelize from "../data/client.js";
+
+export class Application extends Sequelize.Model {}
+Application.init(
+  {
+    status: {
+      type: DataTypes.ENUM("applied", "interview", "rejected", "accepted"),
+      allowNull: false,
+      defaultValue: "applied",
+    },
+    note: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+  },
+  {
+    sequelize,
+    tableName: "application",
+    timestamps: true,
+  },
+);
