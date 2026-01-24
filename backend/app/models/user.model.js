@@ -1,5 +1,5 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../data/client.js";
+import { DataTypes, Sequelize } from "sequelize";
+import { sequelize } from "../data/client.js";
 
 export class User extends Sequelize.Model {}
 

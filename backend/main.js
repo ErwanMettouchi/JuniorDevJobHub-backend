@@ -1,12 +1,16 @@
 import express from "express";
 import cors from "cors";
 import sequelize from "./app/data/client.js";
+import { router } from "./app/routers/router.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Router
+app.use("/", router);
 
 // Server launch
 const port = process.env.PORT || 3000;

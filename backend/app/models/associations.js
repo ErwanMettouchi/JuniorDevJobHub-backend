@@ -3,7 +3,7 @@ import { Favorite } from "./favorite.model.js";
 import { Job } from "./job.model.js";
 import { Technology } from "./technology.model.js";
 import { User } from "./user.model.js";
-import { ViewedJob } from "./viewed_job.model";
+import { ViewedJob } from "./viewed_job.model.js";
 
 // User associations
 User.hasMany(Application, { foreignKey: "userId", as: "applications" });
@@ -40,3 +40,5 @@ Technology.belongsToMany(Job, {
   otherKey: "jobId",
   as: "jobs",
 });
+
+export { Technology, Job, User, ViewedJob, Favorite, Application };
