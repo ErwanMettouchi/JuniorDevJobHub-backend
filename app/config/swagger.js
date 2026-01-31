@@ -45,6 +45,114 @@ const options = {
             updatedAt: { type: "string", format: "date-time" },
           },
         },
+        User: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            firstName: { type: "string", example: "Jean" },
+            lastName: { type: "string", example: "Dupont" },
+            email: {
+              type: "string",
+              format: "email",
+              example: "jean.dupont@email.com",
+            },
+          },
+        },
+        SignupRequest: {
+          type: "object",
+          required: ["firstName", "lastName", "email", "password"],
+          properties: {
+            firstName: { type: "string", example: "Jean" },
+            lastName: { type: "string", example: "Dupont" },
+            email: {
+              type: "string",
+              format: "email",
+              example: "jean.dupont@email.com",
+            },
+            password: { type: "string", example: "MonMotDePasse1!" },
+          },
+        },
+        LoginRequest: {
+          type: "object",
+          required: ["email", "password"],
+          properties: {
+            email: {
+              type: "string",
+              format: "email",
+              example: "jean.dupont@email.com",
+            },
+            password: { type: "string", example: "MonMotDePasse1!" },
+          },
+        },
+        AuthResponse: {
+          type: "object",
+          properties: {
+            user: { $ref: "#/components/schemas/User" },
+            token: { type: "string", example: "eyJhbGciOiJIUzI1NiIs..." },
+          },
+        },
+        Application: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            status: {
+              type: "string",
+              enum: [
+                "applied",
+                "interview",
+                "no_response",
+                "offer",
+                "rejected",
+                "accepted",
+              ],
+              example: "applied",
+            },
+            note: { type: "string", nullable: true },
+            userId: { type: "integer", example: 1 },
+            jobId: { type: "integer", example: 1 },
+            createdAt: { type: "string", format: "date-time" },
+            updatedAt: { type: "string", format: "date-time" },
+          },
+        },
+        Technology: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            name: { type: "string", example: "React" },
+            category: {
+              type: "string",
+              enum: [
+                "frontend",
+                "backend",
+                "database",
+                "devops",
+                "mobile",
+                "other",
+              ],
+              example: "frontend",
+            },
+          },
+        },
+        Favorite: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            userId: { type: "integer", example: 1 },
+            jobId: { type: "integer", example: 1 },
+            createdAt: { type: "string", format: "date-time" },
+            updatedAt: { type: "string", format: "date-time" },
+          },
+        },
+        ViewedJob: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            userId: { type: "integer", example: 1 },
+            jobId: { type: "integer", example: 1 },
+            createdAt: { type: "string", format: "date-time" },
+            updatedAt: { type: "string", format: "date-time" },
+          },
+        },
       },
     },
   },
