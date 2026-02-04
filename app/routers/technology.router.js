@@ -5,7 +5,7 @@ import { technologyController } from "../controllers/technology.controller.js";
 export const techRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /technologies:
  *   get:
  *     summary: Récupère toutes les technologies

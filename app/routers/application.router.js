@@ -5,7 +5,7 @@ import { applicationController } from "../controllers/application.controller.js"
 export const appRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /applications:
  *   get:
  *     summary: Récupère toutes les candidatures

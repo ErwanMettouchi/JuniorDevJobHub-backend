@@ -1,19 +1,12 @@
 export const errorMiddleware = (error, _, res, __) => {
   console.error("Erreur capturée :", error);
-  // Handle "Bad Request" errors (e.g., invalid input)
+
   if (error.name === "BadRequestError") {
     return res.status(400).json({ message: error.message });
   }
 
-  // Handle "Validation" errors (e.g., data validation failed)
   if (error.name === "ValidationError") {
     return res.status(400).json({ message: error.message });
-  }
-
-  // Handle Zod validation errors
-  if (error.name === "ZodError") {
-    const messages = error.errors.map((err) => err.message);
-    return res.status(400).json({ messages });
   }
 
   if (error.name === "UnauthorizedError") {

@@ -5,7 +5,7 @@ import { jobController } from "../controllers/job.controller.js";
 export const jobRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /jobs:
  *   get:
  *     summary: Récupère toutes les offres d'emploi
@@ -28,7 +28,7 @@ export const jobRouter = Router();
 jobRouter.get("/jobs", controllerWrapper(jobController.getAllJobs));
 
 /**
- * @openapi
+ * @swagger
  * /jobs/{id}:
  *   get:
  *     summary: Récupère un job par son ID

@@ -5,7 +5,7 @@ import { viewedJobController } from "../controllers/viewed_job.controller.js";
 export const viewedJobRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /viewed-jobs:
  *   get:
  *     summary: Récupère tous les jobs consultés

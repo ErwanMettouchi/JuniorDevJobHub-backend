@@ -5,7 +5,7 @@ import { controllerWrapper } from "../middlewares/controllerwrapper.middleware.j
 export const userRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /signup:
  *   post:
  *     summary: Inscription d'un nouvel utilisateur
@@ -31,7 +31,7 @@ export const userRouter = Router();
 userRouter.post("/signup", controllerWrapper(userController.signup));
 
 /**
- * @openapi
+ * @swagger
  * /login:
  *   post:
  *     summary: Connexion d'un utilisateur

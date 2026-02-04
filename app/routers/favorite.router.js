@@ -5,7 +5,7 @@ import { favoriteController } from "../controllers/favorite.controller.js";
 export const favoriteRouter = Router();
 
 /**
- * @openapi
+ * @swagger
  * /favorites:
  *   get:
  *     summary: Récupère tous les favoris
